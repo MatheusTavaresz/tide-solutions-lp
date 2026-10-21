@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Bricolage Grotesque", sans-serif;
+  --font-body: "Figtree", sans-serif;
+
+  --color-ink: #0b1f2a;
+  --color-depth: #123a4a;
+  --color-tide: #1a8a9a;
+  --color-tide-soft: #2a9aab;
+  --color-foam: #f3f7f9;
+  --color-mist: #dce8ed;
+  --color-slate: #5a7380;
+  --color-line: #c5d5dc;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    font-family: var(--font-body);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    color: var(--color-ink);
+    background: var(--color-foam);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.03em;
+    line-height: 1.12;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--color-tide) 35%, white);
+  }
+}
+
+@layer utilities {
+  .tide-mesh {
+    background-color: var(--color-foam);
+    background-image:
+      radial-gradient(ellipse 80% 50% at 10% -10%, rgba(26, 138, 154, 0.18), transparent 55%),
+      radial-gradient(ellipse 60% 40% at 90% 0%, rgba(18, 58, 74, 0.12), transparent 50%),
+      linear-gradient(180deg, #e8f1f4 0%, var(--color-foam) 45%, #eef4f6 100%);
+  }
+
+  .tide-wave {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='40' viewBox='0 0 120 40'%3E%3Cpath d='M0 20c20-12 40-12 60 0s40 12 60 0' fill='none' stroke='%231a8a9a' stroke-opacity='0.08' stroke-width='1.5'/%3E%3C/svg%3E");
+    background-size: 120px 40px;
+  }
+
+  .type-display {
+    font-family: var(--font-display);
+    font-optical-sizing: auto;
+    letter-spacing: -0.035em;
+  }
+
+  .type-lead {
+    font-family: var(--font-body);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1.7;
+  }
+}
