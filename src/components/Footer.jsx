@@ -1,4 +1,5 @@
 import Container from './ui/Container'
+import logo from '../assets/logo-tide.jpg'
 
 export default function Footer() {
   return (
@@ -6,11 +7,11 @@ export default function Footer() {
       <Container className="py-14 sm:py-16">
         <div className="grid gap-10 lg:grid-cols-[1.2fr_1fr]">
           <div>
-            <p className="type-display text-2xl font-extrabold">
-              Tide Solutions
-            </p>
-            <p className="mt-3 max-w-md text-sm leading-relaxed text-mist/80">
-              Engenharia de Software, Integrações de APIs & Automações Críticas
+            <a href="#topo" className="inline-flex rounded-2xl bg-white px-5 py-4">
+              <img src={logo} alt="Tide Solutions" className="h-16 w-auto sm:h-20" />
+            </a>
+            <p className="mt-5 max-w-md text-sm leading-relaxed text-mist/80">
+              Engenharia de Software, Integrações de APIs & Automações
             </p>
           </div>
 
